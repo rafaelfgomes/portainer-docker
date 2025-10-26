@@ -1,6 +1,6 @@
 services:
   portainer:
-    image: portainer-docker
+    image: portainer/portainer-ce:alpine-sts
     container_name: portainer
     volumes:
       - data:/data
