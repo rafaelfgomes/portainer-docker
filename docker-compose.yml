@@ -1,0 +1,18 @@
+services:
+  portainer:
+    image: portainer-docker
+    container_name: portainer
+    volumes:
+      - data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+    ports:
+      - ${PORTAINER_PORT:-9000}:9000
+
+networks:
+  net:
+    external: false
+
+volumes:
+  data:
+    name: portainer-data
